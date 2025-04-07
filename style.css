@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Fullscreen background with gradient */
+.hero {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #000000, #190127);
+    color: #fff;
+}
+
+/* Centering the clock container on the screen */
+.container{
+    width: 800px;
+    height: 180px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+/* Clock box with blurred background */
+.clock{
+    width: 100%;
+    height: 100%;
+    background: rgba(235, 0, 255, 0.11);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(40px);
+
+
+}
+
+/* Decorative circle behind bottom-right of container */
+.container::before{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #1bf4be;
+    border-radius: 50%;
+    position: absolute;
+    right: -30px;
+    bottom: -50px;
+    z-index: -1;
+
+
+}
+
+/* Decorative rounded square behind top-left of container */
+.container::after{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background: #1bc9f4;
+    border-radius: 5%;
+    position: absolute;
+    left: -50px;
+    top: -50px;
+    z-index: -1;
+
+
+}
+
+/* Style for time span elements */
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
+
+}
+
+/* Small label below each time unit */
+.clock span::after{
+    font-size: 16px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Labels for each time unit */
+#hrs::after{
+    content: 'HOURS'
+}
+#min::after{
+    content: 'MINS'
+}
+#sec::after{
+    content: 'SEC'
+}
